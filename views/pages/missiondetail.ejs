@@ -1,0 +1,27 @@
+
+<%- include("../partials/head", { title: "detail de mission" }) %>
+<%- include("../partials/header") %> 
+
+<h1>details de mission</h1>
+
+<ul>
+  <% missions.forEach(mission => { %>
+    <li>
+      <h2><%= mission.titre %></h2>
+      <p><%= mission.decription %></p>
+      <p>Type: <%= mission.type %></p>
+      <p>Date début: <%= mission.date_debut %></p>
+      <p>Salaire: <%= mission.salaire_net %> <%= mission.unité_salaire %></p>
+
+      <p>Compétences :</p>
+      <ul>
+        <% mission.skills.forEach(skill => { %>
+          <li><%= skill %></li>
+        <% }) %>
+      </ul>
+    </li>
+  <% }) %>
+</ul>
+
+
+<%- include("../partials/footer") %>
