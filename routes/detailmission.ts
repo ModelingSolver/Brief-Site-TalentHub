@@ -11,11 +11,13 @@ detailmissionRouter.get("/missiondetail", (request, response) => {
 });
 
 // Read
-detailmissionRouter.get("/detailmission/:id", (request, response) => {
+detailmissionRouter.get("/detail/:id", (request, response) => {
   const controller = new MissionDetailController(request, response);
   controller.readMission()
 
 });
+
+
 
 // Edit
 //detailmissionRouter.put("/detailmission/:id", (request, response) => {
@@ -24,15 +26,23 @@ detailmissionRouter.get("/detailmission/:id", (request, response) => {
 //});
 
 // Add
-// detailmissionRouter.post("/detailmission", (request, response) => {
-//   const controller = new detailmissionController(request, response);
-//   controller.adddetailmission();
-// });
+   detailmissionRouter.post("/formulaire", (request, response) => {
+   const controller = new MissionDetailController(request, response);
+   controller.addMission();
+ });
 
-// // Delete
-// detailmissionRouter.delete("/detailmission/:id", (request, response) => {
-//   const controller = new detailmission(request, response);
-//   controller.deletedetailmission();
-// });
+ 
+// GET Route d affichage formulaire
+detailmissionRouter.get("/formulaire", (request, response) => {
+  const controller = new MissionDetailController(request, response);
+  controller.showForm(); // You will need to create this method in your controller
+});
+
+
+ // Delete
+detailmissionRouter.delete("/detail/:id", (request, response) => {
+  const controller = new MissionDetailController(request, response);
+   controller.deleteMission();
+ });
 
 export default detailmissionRouter;

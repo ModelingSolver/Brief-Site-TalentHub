@@ -7,6 +7,7 @@ export type Mission = {
     date_debut: string, 
     salaire_net: number, 
     unité_salaire: string
+    mdp?: string;
 };
 
 

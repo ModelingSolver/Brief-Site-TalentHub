@@ -1,26 +1,36 @@
-<%- include("../partials/header") %> 
+<%- include("../partials/head") %> 
+<%-include("../partials/header") %>
 
-<h1>HOME PAGE OK?</h1>
+<div class="tresClasse">
+<h1>TROUVEZ LA MISSION QUI VOUS CORRESPOND</h1>
 
+<p>Découvrez des annonces claires, accéssibles et adaptées à vos skills.
+    Publiez, éditez, ou supprimez vos offres en toute simplicité.
+</p>
+<a href="/missiondetail" class="button">Découvrez les offres</a>
+</div>
 
+<div class="page-container">
+  <ul>
+    <% missions.slice(0,3).forEach(mission => { %>
+      <li>
+        <h2><%= mission.titre %></h2>
+         <a href="/detail/<%= mission.id %>">Voir le détail</a>
+        <p><%= mission.decription %></p>
+        <p>Type: <%= mission.type %></p>
+        <p>Date début: <%= mission.date_debut %></p>
+        <p>Salaire: <%= mission.salaire_net %> <%= mission.unité_salaire %></p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <p>Compétences :</p>
+        <ul>
+          <% mission.skills.forEach(skill => { %>
+            <li><%= skill %></li>
+          <% }) %>
+        </ul>
+      </li>
+    <% }) %>
+  </ul>
+</div>
 
 
 

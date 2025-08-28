@@ -1,0 +1,55 @@
+<%-include("../partials/formulairehead") %>
+
+
+<h1>PUBLIEZ VOTRE MISSION</h1>
+
+<form action="/formulaire" method="POST">
+  <div class="form-group">
+    <label for="titre">Titre de la mission</label>
+    <input type="text" class="form-control" id="titre" name="titre" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea class="form-control" id="decription" name="decription" rows="4" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="skills">Compétences (séparées par une virgule)</label>
+    <input type="text" class="form-control" id="skills" name="skills" placeholder="Ex: HTML, CSS, JavaScript" required>
+  </div>
+
+  <div class="form-group">
+    <label for="type">Type de mission</label>
+    <select class="form-control" id="type" name="type" required>
+      <option value="">Sélectionnez un type</option>
+      <option value="CDI">CDI</option>
+      <option value="CDD">CDD</option>
+      <option value="Freelance">Freelance</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="date_debut">Date de début</label>
+    <input type="date" class="form-control" id="date_debut" name="date_debut" required>
+  </div>
+
+  <div class="form-group">
+    <label for="salaire_net">Salaire net</label>
+    <input type="number" class="form-control" id="salaire_net" name="salaire_net" required>
+  </div>
+
+  <div class="form-group">
+    <label for="unité_salaire">Unité de salaire</label>
+    <input type="text" class="form-control" id="unité_salaire" name="unité_salaire" placeholder="Ex: €/jour, €/mois, €/an" required>
+  </div>
+
+   <div class="form-group">
+    <label for="mdp">Mot de passe</label>
+    <input type="password" class="form-control" id="mdp" name="mdp" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Créer la mission</button>
+</form>
+
+<%- include("../partials/footer") %>

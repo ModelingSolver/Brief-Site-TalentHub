@@ -1,0 +1,115 @@
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', Arial, sans-serif; /* Police moderne */
+  background: #f3f4f6; /* Gris clair moderne */
+  color: #2d2d2d; /* Texte principal plus sombre */
+  padding: 20px;
+}
+
+/* Conteneur général du contenu (hors header) */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827; /* Titre plus marqué */
+  text-align: center;
+}
+
+.tresClasse {
+
+  background-color: #ffffff; /* Fond blanc pour un look clean */
+  color: #2d2d2d; /* Texte plus foncé et lisible */
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+
+}
+
+/* Liste des missions */
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+/* Chaque mission */
+li {
+  background: #ffffff; /* Fond blanc net */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+li:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+}
+
+li h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2563eb; /* Bleu accent pour titres */
+  font-weight: 600;
+}
+
+li p {
+  margin-bottom: 8px;
+  color: #4b5563; /* Gris moyen pour texte */
+  font-size: 15px;
+}
+
+li p:first-of-type {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Liste compétences (tags) */
+li ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+li ul li {
+  background: #e0f2fe; /* Bleu clair */
+  color: #0369a1; /* Bleu foncé lisible */
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  ul {
+    grid-template-columns: 1fr;
+  }
+  
+  body {
+    padding: 15px;
+  }
+  
+  li {
+    padding: 15px;
+  }
+}

@@ -1,21 +1,26 @@
-<%- include("../partials/head", { title: "detail de mission" }) %> <%-
-include("../partials/header") %>
+<%- include("../partials/head", { title: "détail de mission" }) %>
+<%- include("../partials/header") %>
 
-<h1>details de mission</h1>
-
-<h2><%= wantedmission.titre %></h2>
-<p><%= wantedmission.description %></p>
-<p>Type: <%= wantedmission.type %></p>
-<p>Date début: <%= wantedmission.date_debut %></p>
-<p>
-  Salaire: <%= wantedmission.salaire_net %> <%= wantedmission.unité_salaire %>
-</p>
-
-<p>Compétences :</p>
-<ul>
-  <% wantedmission.skills.forEach(skill => { %>
-  <li><%= skill %></li>
-  <% }) %>
-</ul>
-
-<%- include("../partials/footer") %>
+<div class="container">
+    <h1>Détail de la Mission</h1>
+    <div class="mission-card">
+        <h2><%= wantedmission.titre %></h2>
+        <p class="mission-description"><%= wantedmission.decription %></p>
+        
+        <div class="mission-info">
+            <p><strong>Type:</strong> <%= wantedmission.type %></p>
+            <p><strong>Date début:</strong> <%= wantedmission.date_debut %></p>
+            <p><strong>Salaire:</strong> <%= wantedmission.salaire_net %> <%= wantedmission.unité_salaire %></p>
+        </div>
+        
+        <div class="skills-container">
+            <p><strong>Compétences :</strong></p>
+            <ul class="skills-list">
+                <% wantedmission.skills.forEach(skill => { %>
+                    <li class="skill-tag"><%= skill %></li>
+                <% }) %>
+                <a href="http://localhost:3001/" class="button">Effacer la mission</a>
+            </ul>
+        </div>
+    </div>
+</div>
