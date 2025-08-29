@@ -1,7 +1,24 @@
 import { Request, Response } from "express";
 import { missions } from "../src/data";
 import { Controller } from "./Controller";
-// IMPORT Z FROM ZORRO
+// import { z } from 'zod';
+
+
+// const newMissionSchema = z.object ({
+
+//         id: z.number.min(1).max(999999999),
+//         titre: z.string.max(100),
+//         decription: z.string.min(1).max(500),
+//         skills: z.string.min(0).max(200).optional,
+//         type: z.string.min(3).max(3),
+//         date_debut: z.date,
+//         salaire_net: z.number.min(0).max(999999999),
+//         unité_salaire: z.string.min(4).max(12),
+//         mdp: z.password
+
+// })
+
+
 
 export class MissionDetailController extends Controller{
   
@@ -45,14 +62,12 @@ export class MissionDetailController extends Controller{
   }
 
 
-// ZOD SCHEMA
-
 
   public addMission() {
 
     // 1. chopper le formulaire...
     const formData = this.request.body;
-/////// FAUDRAIT SAFE-PARSER LA FORMDATA AVEC ZOD JE PRESUME ????!!!!!
+
     // 2. Creer mission objet
     const newMission = {
         id: missions.length + 1, // Creer un id unique
@@ -66,6 +81,12 @@ export class MissionDetailController extends Controller{
         unité_salaire: formData.unité_salaire,
         mdp: formData.mdp
     };
+
+    /////// FAUDRAIT SAFE-PARSER LA FORMDATA AVEC ZOD JE PRESUME ????!!!!!
+    // const result = newMissionSchema.safeParse(12); 
+    // if (!result.success) {
+    // result.error.issues;
+    // }
 
     // 3. Ajouter la nouvelle mission au tableau de data missions...
     missions.push(newMission);

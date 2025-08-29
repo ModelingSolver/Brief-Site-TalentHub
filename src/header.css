@@ -48,6 +48,11 @@
   gap: 1rem;
 }
 
+/*mi button mi burger, le burgon... */
+.burgon {
+    display: none;
+} 
+
 /* Styles pour les boutons */
 .button {
   text-decoration: none;
@@ -81,4 +86,21 @@
 .button--secondary:hover {
   background-color: #6b7280;
   color: #ffffff;
+}
+
+@media (max-width: 410px) {
+
+.button button--secondary {
+  display: none;
+}
+
+.button {
+  display: none;
+}
+
+.burgon {
+    display: flex;
+    color: black;
+} 
+
 }

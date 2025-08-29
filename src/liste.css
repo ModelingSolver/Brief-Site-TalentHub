@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Inter', 'Poppins', Arial, sans-serif; /* Police moderne */
-  background: #f3f4f6; /* Gris clair moderne */
+  background: #F9F6F3; /* Gris clair moderne */
   color: #2d2d2d; /* Texte principal plus sombre */
   padding: 20px;
 }
@@ -22,14 +22,15 @@ h1 {
   margin-bottom: 30px;
   font-size: 26px;
   font-weight: 700;
-  color: #111827; /* Titre plus marqué */
+  color: black;
   text-align: center;
 }
 
 .tresClasse {
 
-  background-color: #ffffff; /* Fond blanc pour un look clean */
-  color: #2d2d2d; /* Texte plus foncé et lisible */
+  /*background-color: rgba(207, 171, 141, 0.65); /* Fond blanc pour un look clean */
+  background-color: #CFAB8D; 
+  color: black; /* Texte plus foncé et lisible */
   padding: 1.5rem 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   width: 100%;
@@ -39,7 +40,18 @@ h1 {
   margin-bottom: 30px;
   text-align: center;
 
+
 }
+
+.containerDetailMission {
+
+   text-align: center;
+
+}
+
+
+
+
 
 /* Liste des missions */
 ul {
@@ -99,8 +111,9 @@ li ul li {
   box-shadow: none;
 }
 
-/* Mobile */
+/* Mobile ou tablette...*/
 @media (max-width: 768px) {
+
   ul {
     grid-template-columns: 1fr;
   }

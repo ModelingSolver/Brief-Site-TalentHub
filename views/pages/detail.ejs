@@ -1,6 +1,8 @@
 <%- include("../partials/head", { title: "détail de mission" }) %>
 <%- include("../partials/header") %>
 
+
+<div class="containerDetailMission">
 <div class="container">
     <h1>Détail de la Mission</h1>
     <div class="mission-card">
@@ -19,6 +21,7 @@
                 <% wantedmission.skills.forEach(skill => { %>
                     <li class="skill-tag"><%= skill %></li>
                 <% }) %>
+                </div>
                 <a href="http://localhost:3001/" class="button">Effacer la mission</a>
             </ul>
         </div>
