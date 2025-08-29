@@ -20,9 +20,9 @@ detailmissionRouter.get("/detail/:id", (request, response) => {
 
 
 // Edit
-//detailmissionRouter.put("/detailmission/:id", (request, response) => {
-// const controller = new detailmissionController(request, response);
-//  controller.editdetailmission();
+//Router.put("/detailmission/:id", (request, response) => {
+// const controller = new missionDetailController(request, response);
+//  controller.editmissionDetail();
 //});
 
 // Add

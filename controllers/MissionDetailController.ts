@@ -52,6 +52,9 @@ export class MissionDetailController extends Controller{
 
    }
 
+
+
+   // bon en vrai edit cest un formulaire auquel on refile la data de la mission voulu, je damande une augmentation du budget team dev, on est pas assez chef! :sweat:
    public editMission() {
      this.response.send("Bienvenue sur l'édition de mission");
   }
@@ -99,7 +102,7 @@ export class MissionDetailController extends Controller{
 
  public deleteMission() {
     
-    const missionId = parseInt(this.request.params.id, 10);
+    const missionId = parseInt(this.request.params.id);
     const { mdp } = this.request.body;
     const wantedmission = missions.find(m => m.id === missionId);
 
@@ -119,6 +122,6 @@ export class MissionDetailController extends Controller{
     const index = missions.indexOf(wantedmission);
     missions.splice(index, 1);
 
-    this.response.send("Mission supprimée !");
+    this.response.redirect('/missiondetail');
 }
 }
